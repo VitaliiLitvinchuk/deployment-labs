@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/deployment-labs',
+  output: isGithubActions ? 'export' : undefined,
+  basePath: isGithubActions ? '/deployment-labs' : '',
+  assetPrefix: isGithubActions ? '/deployment-labs/' : '',
   images: {
     unoptimized: true,
   },
