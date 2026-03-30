@@ -14,7 +14,7 @@ RUN npm run build
 # Stage 3: Фінальний образ
 FROM node:24-alpine AS runner
 WORKDIR /app
-ENV NODE_ENV production
+ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
