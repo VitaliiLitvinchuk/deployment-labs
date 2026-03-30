@@ -4,8 +4,8 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 const nextConfig: NextConfig = {
   output: isGithubActions ? 'export' : undefined,
-  basePath: isGithubActions ? '/deployment-labs' : '',
-  assetPrefix: isGithubActions ? '/deployment-labs/' : '',
+  basePath: './',
+  assetPrefix: './',
   images: {
     unoptimized: true,
   },
